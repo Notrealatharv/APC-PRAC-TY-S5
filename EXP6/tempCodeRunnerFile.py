@@ -1,0 +1,2 @@
+
+# print("Directories created successfully")
