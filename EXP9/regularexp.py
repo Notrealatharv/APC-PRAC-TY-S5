@@ -1,4 +1,4 @@
-# REGEX
+#REGEX 
 import re
 # 1 re.compile() , compile() creates regex pattern and pattern can be reused 
 
@@ -64,3 +64,28 @@ text = "Age 20, Roll 101, Marks 95"
 for match in pattern.finditer(text):
     print("Found:", match.group())
     print("Position:", match.start(), "-", match.end())
+
+# 7. EMAIL VALIDATION
+
+text = "Contact me at atharv@gmail.com"
+pattern = r"[\w.-]+@[\w.-]+\.\w+"
+result = re.findall(pattern, text)
+print("Email:", result)
+
+#8. PHONE NUMBER
+
+text = "Call me at 9876543210"
+pattern = r"\d{10}"
+result = re.findall(pattern, text)
+print("Phone:", result)
+
+# 9. password validator
+
+password = input("Enter password: ")
+pattern = r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$"
+result = re.fullmatch(pattern, password)
+
+if result:
+    print("Valid Password")
+else:
+    print("Invalid Password")
